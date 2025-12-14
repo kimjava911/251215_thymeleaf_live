@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    # https://console.aiven.io/
+    url: jdbc:mysql://mysql-{}-{}-{}.{}.aivencloud.com:{}/defaultdb?ssl-mode=REQUIRED
+    username: avnadmin
+    password: AVNS_{}
+    # driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      #      ddl-auto: create
+      ddl-auto: update
+      naming:
+        # createdAt -> created_at
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # S3, Object Storage
+  # https://supabase.com/
+  cloud:
+    aws:
+      region:
+        static: ap-{}
+      credentials:
+        access-key: {}
+        secret-key: {}
+      s3:
+        endpoint: https://{}.storage.supabase.co/storage/v1/s3
+        path-style-access-enabled: true
+  thymeleaf:
+    cache: false
+
+aws:
+  s3:
+    bucket: my-bucket
+
+file:
+  storage:
+    type: local
+#    type: s3
