@@ -21,7 +21,7 @@ import static org.springframework.http.MediaType.parseMediaType;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/images")
+@RequestMapping("/files")
 @Slf4j
 public class S3FileController {
 

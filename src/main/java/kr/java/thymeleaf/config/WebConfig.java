@@ -22,7 +22,7 @@ public class WebConfig implements WebMvcConfigurer {
         if (storageType.equals("local")) {
             String absolutePath = Paths.get(uploadDir).toAbsolutePath().normalize().toString();
 
-            registry.addResourceHandler("/file/**")  // URL 패턴
+            registry.addResourceHandler("/files/**")  // URL 패턴
                     .addResourceLocations("file:" + absolutePath + "/")  // 실제 디렉토리
                     .setCachePeriod(3600);
         }

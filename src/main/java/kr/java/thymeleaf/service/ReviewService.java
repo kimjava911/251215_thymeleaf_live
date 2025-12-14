@@ -64,7 +64,7 @@ public class ReviewService {
 
     private void deleteOldImage(String imageUrl) {
         if (StringUtil.isNullOrEmpty(imageUrl)) {
-            String filename = imageUrl.replace("/images/", "");
+            String filename = imageUrl.replace("/files/", "");
             fileStorageService.delete(filename);
         }
     }
