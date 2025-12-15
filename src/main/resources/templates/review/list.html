@@ -3,6 +3,21 @@
 <head th:replace="~{fragments/head :: head('메인')}"></head>
 <body>
     <nav th:replace="~{fragments/nav :: nav('메인')}"></nav>
-    <p>리뷰 & 사진 업로드</p>
+
+    <p>
+        <a th:href="@{/reviews/new}">새 리뷰 작성</a>
+        <p th:if="${#lists.isEmpty(reviews)}">등록된 리뷰가 없습니다.</p>
+        <div th:each="review : ${reviews}">
+            <img th:if="${review.imageUrl}"
+                th:src="${review.imageUrl}"
+                alt="리뷰 이미지"
+                style="width: 150px; max-height: 150px">
+            <h3>
+                <a th:href="@{/reviews/{id}(id=${review.id})}"
+                   th:text="${review.title}"></a>
+            </h3>
+            <!-- 평점, 생성일... -->
+        </div>
+    </p>
 </body>
 </html>
