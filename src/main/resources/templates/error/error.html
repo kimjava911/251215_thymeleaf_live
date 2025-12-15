@@ -1,0 +1,11 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('오류가 발생했습니다')}"></head>
+<body>
+<nav th:replace="~{fragments/nav :: nav('오류가 발생했습니다')}"></nav>
+<div>
+    <h2>오류가 발생했습니다</h2>
+    <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
+</div>
+</body>
+</html>
