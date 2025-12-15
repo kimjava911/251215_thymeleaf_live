@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(pageName)">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    <title th:text="${pageName} + ' - 리뷰 시스템'"></title>-->
+    <title th:text="|${pageName} - 리뷰 시스템|"></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'ThinRounded';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/ThinDungGeunMo.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        /* 1. '*' <- 모든 요소에 적용 */
+        /** {*/
+        /*    font-family: ThinRounded, sans-serif;*/
+        /*}*/
+        /* 2. 폰트는 '상속' -> 최상위 -> html, body */
+        body {
+            font-family: ThinRounded, sans-serif;
+        }
+
+        /*  OG Tag, Favicon, ...  */
+    </style>
+</head>
+</html>
